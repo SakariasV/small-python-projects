@@ -1,14 +1,23 @@
 import keyboard
-
+import time
 
 def main():
-
-    count = 0
-
+    key = ''
+    newkey = ''
     while True:
-        if keyboard.is_pressed('space'):
-            count += 1
-            print(count)
+        newkey = keyboard.read_key()
+
+
+        try:
+            relese = keyboard.is_pressed(key)
+            if relese == False:
+                key = ''
+
+        except:
+            if key != newkey:
+                print(newkey)
+                key = newkey
+        
 
 
 
